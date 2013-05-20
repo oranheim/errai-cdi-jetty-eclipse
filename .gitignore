@@ -1,0 +1,12 @@
+.idea/*
+.classpath
+.settings
+.project
+.metadata/*
+*.iml
+target/
+.errai
+*.versionsBackup
+gwt-unitCache
+*.JUnit
+

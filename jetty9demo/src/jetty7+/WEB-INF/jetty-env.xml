@@ -1,0 +1,41 @@
+<?xml version="1.0"  encoding="ISO-8859-1"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure.dtd">
+
+<Configure id="sample-weld" class="org.eclipse.jetty.webapp.WebAppContext">
+
+    <Array id="plusConfig" type="java.lang.String">
+        <Item>org.eclipse.jetty.webapp.WebInfConfiguration</Item>
+        <Item>org.eclipse.jetty.webapp.WebXmlConfiguration</Item>
+        <Item>org.eclipse.jetty.webapp.MetaInfConfiguration</Item>
+        <Item>org.eclipse.jetty.plus.webapp.EnvConfiguration</Item> <!-- add for jndi -->
+  		<Item>org.eclipse.jetty.plus.webapp.PlusConfiguration</Item>    <!-- add for jndi -->
+        <Item>org.eclipse.jetty.webapp.FragmentConfiguration</Item>
+        <Item>org.eclipse.jetty.webapp.JettyWebXmlConfiguration</Item>
+    </Array>
+
+<!-- 	<Set name="configurationClasses"><Ref id="plusConfig"/></Set> -->
+	
+    <New id="BeanManager" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg><Ref id="sample-weld"/></Arg>
+        <Arg>BeanManager</Arg>
+        <Arg>
+            <New class="javax.naming.Reference">
+                <Arg>javax.enterprise.inject.spi.BeanManager</Arg>
+                <Arg>org.jboss.weld.resources.ManagerObjectFactory</Arg>
+                <Arg/>
+            </New>
+        </Arg>
+    </New>
+
+     <New id="Errai" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg><Ref id="sample-weld"/></Arg>
+        <Arg>ErraiService</Arg>
+        <Arg>
+            <New class="javax.naming.Reference">
+                <Arg>org.jboss.errai.bus.server.service.ErraiService</Arg>
+                <Arg>org.jboss.errai.container.ErraiServiceObjectFactory</Arg>
+                <Arg/>
+            </New>
+        </Arg>
+    </New>
+</Configure>
