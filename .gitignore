@@ -5,6 +5,9 @@
 .metadata/*
 *.iml
 classes/
+app/
+lib/
+deploy/
 target/
 .errai
 *.versionsBackup
