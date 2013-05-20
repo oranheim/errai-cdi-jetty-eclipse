@@ -4,6 +4,7 @@
 .project
 .metadata/*
 *.iml
+classes/
 target/
 .errai
 *.versionsBackup
