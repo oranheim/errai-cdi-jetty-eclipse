@@ -491,7 +491,12 @@ public class JettyLauncher extends ServletContainerLauncher {
 				name = name.replace('/', '.');
 				return !WebAppContextWithReload.this.isSystemClass(name)
 						|| name.startsWith("org.eclipse.jetty.servlet.")
-						//|| name.startsWith("org.eclipse.jetty.server.")
+						//|| name.startsWith("javax.servlet.")
+						|| name.startsWith("org.eclipse.jetty.server.")
+						//|| name.startsWith("com.google.gwt.")
+//						|| name.startsWith("javax.servlet.")
+						|| name.startsWith("org.eclipse.jetty.plus.")
+//						|| name.startsWith("org.eclipse.jetty.util.")
 						|| name.startsWith("org.apache.jasper.")
 						|| name.startsWith("org.apache.xerces.");
 			}
