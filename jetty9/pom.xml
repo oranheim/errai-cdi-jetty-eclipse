@@ -7,17 +7,17 @@
 	<groupId>org.jboss.errai</groupId>
 	<artifactId>errai-cdi-jetty9</artifactId>
 	<packaging>jar</packaging>
-	<version>2.3.0.Final</version>
+	<version>2.3.2.Final</version>
 
 	<!-- Parent -->
 	<parent>
 		<groupId>org.jboss.errai</groupId>
 		<artifactId>cdi-integration-parent</artifactId>
-		<version>2.3.0.Final</version>
+		<version>2.3.2.Final</version>
 	</parent>
 
 	<properties>
-		<errai.version>2.3.0.Final</errai.version>
+		<errai.version>2.3.2.Final</errai.version>
 		<gwt.version>2.5.1</gwt.version>
 		<jetty.version>9.0.3.v20130506</jetty.version>
 	</properties>
